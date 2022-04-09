@@ -91,8 +91,6 @@ public class Sketch extends PApplet {
    */
   public void drawHouse(float houseX, float houseY, float houseR, float houseG, float houseB, float triangleR, float triangleG, float triangleB, float windowR, float windowG, float windowB) {
 
-    // reference point: 165, 325
-
     // draw house
     fill(houseR, houseG, houseB);
     rect(houseX + 60, houseY, 350, 325);
