@@ -65,6 +65,7 @@ public class Sketch extends PApplet {
       rect(grassBlockX, 650, fltGrassWidth, 75);
 
     }
+    
     // draw top layer grass
     fill(147, 192, 97);
     rect(0, 650, 800, 45);
@@ -142,9 +143,11 @@ public class Sketch extends PApplet {
    */
   public void drawSun(float fltSunX, float fltSunY, float fltSize) {
 
+    // centre the sun
     fltSunX = sunMiddleX(fltSunX);
     fltSunY = sunMiddleY(fltSunY);
 
+    // draw sun
     fill(255, 255, 35);
     ellipse(fltSunX, fltSunY, fltSize, fltSize);
 
