@@ -47,7 +47,7 @@ public class Sketch extends PApplet {
   /**
    * Draws ground, grass, and grass blocks
    * 
-   * @param fltStartingX: starting X coordinate of grass block
+   * @param fltStartingX: Starting X coordinate of grass block
    * @param fltGrassWidth: width of each grass block
    * @author: A. Chan
    */
@@ -117,8 +117,8 @@ public class Sketch extends PApplet {
    * 
    * @param doorX: X coordinate of door
    * @param doorY: Y coordinte of door
-   * @param doorWidth: width of door
-   * @param doorHeight: height of door
+   * @param doorWidth: Width of door
+   * @param doorHeight: Height of door
    * @author: A. Chan
    */
   public void drawDoor(float doorX, float doorY, float doorWidth, float doorHeight, float doorR, float doorG, float doorB) {
