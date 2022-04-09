@@ -35,7 +35,7 @@ public class Sketch extends PApplet {
     drawHouse(165, 325, 168, 97, 87, 124, 117, 110, 122, 184, 221);
 
     // draw sun 
-    drawSun(100, 100);
+    drawSun(100, 100, 75);
 
     // draw door
     drawDoor(350, 500, 110, 150, 123, 68, 29);
@@ -140,13 +140,13 @@ public class Sketch extends PApplet {
    * @param fltSunY: Y coordinate of the sun
    * @author: A. Chan
    */
-  public void drawSun(float fltSunX, float fltSunY) {
+  public void drawSun(float fltSunX, float fltSunY, float fltSize) {
 
     fltSunX = sunMiddleX(fltSunX);
     fltSunY = sunMiddleY(fltSunY);
 
     fill(255, 255, 35);
-    ellipse(fltSunX, fltSunY, 75, 75);
+    ellipse(fltSunX, fltSunY, fltSize, fltSize);
 
     line(fltSunX + 38, fltSunY, fltSunX + 85, fltSunY);
     line(fltSunX, fltSunY + 38, fltSunX, fltSunY + 85);
