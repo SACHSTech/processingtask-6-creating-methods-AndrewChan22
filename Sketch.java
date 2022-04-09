@@ -175,7 +175,7 @@ public class Sketch extends PApplet {
    * Draws sun's Y coordinate at the top of the screen
    * 
    * @param middleY: Uses y coordinte of sun from the drawSun method
-   * @return: Returns the y coordinate at 1/10 of the screen
+   * @return: Returns the y coordinate at 1/15 of the screen
    */
   public float sunMiddleY(float middleY) {
     return height/15;
