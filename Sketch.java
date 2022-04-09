@@ -1,7 +1,7 @@
 import processing.core.PApplet;
 
 /**
- * Description: Draw objects using parameters from methods
+ * Drawing objects using parameters from methods
  * @author: A. Chan
  */
 
@@ -47,11 +47,11 @@ public class Sketch extends PApplet {
   /**
    * Draws ground, grass, and grass blocks
    * 
-   * @param startingX: starting X coordinate of grass block
-   * @param grassWidth: width of each grass block
+   * @param fltStartingX: starting X coordinate of grass block
+   * @param fltGrassWidth: width of each grass block
    * @author: A. Chan
    */
-  public void drawGround(float startingX, float grassWidth) {
+  public void drawGround(float fltStartingX, float fltGrassWidth) {
 
     noStroke();
 
@@ -60,9 +60,9 @@ public class Sketch extends PApplet {
     rect(0, 650, 800, 200);
 
     fill(147, 192, 97);
-    for (float grassBlockX = startingX; grassBlockX <= 800; grassBlockX+=(width/5)) {
+    for (float grassBlockX = fltStartingX; grassBlockX <= 800; grassBlockX+=(width/5)) {
 
-      rect(grassBlockX, 650, grassWidth, 75);
+      rect(grassBlockX, 650, fltGrassWidth, 75);
 
     }
     // draw top layer grass
@@ -76,8 +76,8 @@ public class Sketch extends PApplet {
   /**
    * Draws house using coordinate and colour parameters
    * 
-   * @param HouseX: X coordinate of composite house
-   * @param HouseY: Y coordinate of house
+   * @param houseX: X coordinate of composite house
+   * @param houseY: Y coordinate of house
    * @param houseR: 'Red' colour of house (RGB)
    * @param houseG: 'Green' colour of house (RGB)
    * @param houseB: 'Blue' colour of house (RGB)
@@ -89,28 +89,28 @@ public class Sketch extends PApplet {
    * @param windowB: 'Blue' colour of window (RGB)
    * @author: A. Chan
    */
-  public void drawHouse(float HouseX, float HouseY, float houseR, float houseG, float houseB, float triangleR, float triangleG, float triangleB, float windowR, float windowG, float windowB) {
+  public void drawHouse(float houseX, float houseY, float houseR, float houseG, float houseB, float triangleR, float triangleG, float triangleB, float windowR, float windowG, float windowB) {
 
     // reference point: 165, 325
 
     // draw house
     fill(houseR, houseG, houseB);
-    rect(HouseX + 60, HouseY, 350, 325);
+    rect(houseX + 60, houseY, 350, 325);
 
     // draw roof
     fill(triangleR, triangleG, triangleB);
-    triangle(HouseX + 235, HouseY - 150, HouseX, HouseY, HouseX + 470, HouseY);
+    triangle(houseX + 235, houseY - 150, houseX, houseY, houseX + 470, houseY);
 
     // draw left window
     fill(windowR, windowG, windowB);
-    ellipse(HouseX + 148, HouseY + 95, 50, 75);
-    line(HouseX + 123, HouseY + 95, HouseX + 173, HouseY + 95);
-    line(HouseX + 148, HouseY + 58, HouseX + 148, HouseY + 132);
+    ellipse(houseX + 148, houseY + 95, 50, 75);
+    line(houseX + 123, houseY + 95, houseX + 173, houseY + 95);
+    line(houseX + 148, houseY + 58, houseX + 148, houseY + 132);
 
     // draw right window
-    ellipse(HouseX + 323, HouseY + 95, 50, 75);
-    line(HouseX + 299, HouseY + 95, HouseX + 348, HouseY + 95);
-    line(HouseX + 323, HouseY + 58, HouseX + 323, HouseY + 131);
+    ellipse(houseX + 323, houseY + 95, 50, 75);
+    line(houseX + 299, houseY + 95, houseX + 348, houseY + 95);
+    line(houseX + 323, houseY + 58, houseX + 323, houseY + 131);
 
   }
 
@@ -138,30 +138,30 @@ public class Sketch extends PApplet {
   /**
    * Draws sun in the top-middle of the screen
    * 
-   * @param sunX: X coordinate of the sun
-   * @param sunY: Y coordinate of the sun
+   * @param fltSunX: X coordinate of the sun
+   * @param fltSunY: Y coordinate of the sun
    * @author: A. Chan
    */
-  public void drawSun(float sunX, float sunY) {
+  public void drawSun(float fltSunX, float fltSunY) {
 
-    sunX = sunMiddleX(sunX);
-    sunY = sunMiddleY(sunY);
+    fltSunX = sunMiddleX(fltSunX);
+    fltSunY = sunMiddleY(fltSunY);
 
     fill(255, 255, 35);
-    ellipse(sunX, sunY, 75, 75);
+    ellipse(fltSunX, fltSunY, 75, 75);
 
-    line(sunX + 38, sunY, sunX + 85, sunY);
-    line(sunX, sunY + 38, sunX, sunY + 85);
-    line(sunX - 37.5f, sunY, sunX - 84.5f, sunY);
+    line(fltSunX + 38, fltSunY, fltSunX + 85, fltSunY);
+    line(fltSunX, fltSunY + 38, fltSunX, fltSunY + 85);
+    line(fltSunX - 37.5f, fltSunY, fltSunX - 84.5f, fltSunY);
 
-    line(sunX + 27, sunY + 27, sunX + 60, sunY + 60);
-    line(sunX - 27, sunY + 25, sunX - 60, sunY + 60);
+    line(fltSunX + 27, fltSunY + 27, fltSunX + 60, fltSunY + 60);
+    line(fltSunX - 27, fltSunY + 25, fltSunX - 60, fltSunY + 60);
 
 
   }
   
   /**
-   * Centres the sun at the middle of the screen
+   * Given x float value, return x coordinate in the middle of the screen
    * 
    * @param middleX: Uses x coordinate of sun from the drawSun method
    * @return: Returns the x coordinate at the middle of the screen
@@ -172,10 +172,11 @@ public class Sketch extends PApplet {
   }
 
   /**
-   * Draws sun's Y coordinate at the top of the screen
+   * Given y float value, return y coordinate at 1/15 of the screen
    * 
    * @param middleY: Uses y coordinte of sun from the drawSun method
    * @return: Returns the y coordinate at 1/15 of the screen
+   * @author: A. Chan
    */
   public float sunMiddleY(float middleY) {
     return height/15;
