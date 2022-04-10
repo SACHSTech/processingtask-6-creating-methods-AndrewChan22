@@ -124,7 +124,7 @@ public class Sketch extends PApplet {
    */
   public void drawDoor(float fltDoorX, float fltDoorY, float fltDoorWidth, float fltDoorHeight, float fltDoorR, float fltDoorG, float fltDoorB) {
 
-    // draw door from the middle of screen
+    // draw door from the middle
     fltDoorX = centreDoorX(fltDoorX, fltDoorWidth);
 
     // draw door
